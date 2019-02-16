@@ -12,7 +12,7 @@ def resize(image):
 	#return image
 
 
-def BlackWhite(image):
+def black_white(image):
 	image=image.convert(mode="L")
 	return image
 
@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
 
 		#Black&White
-		image=BlackWhite(image)
+		image=black_white(image)
 
 		image.show()
 	
