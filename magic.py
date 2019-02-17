@@ -5,7 +5,7 @@ import os
 character_box = ['.',',',':',';','+','*','?','%','S','#','@']
 
 
-def resize(image):
+def alter(image):
 	(old_width, old_height) = image.size
 	aspect_ratio = (1.0*old_height)/(1.0*old_width)
 	new_height = aspect_ratio*(100)
@@ -14,7 +14,7 @@ def resize(image):
 	#return image
 
 
-def black_white(image):
+def pigment(image):
 	image=image.convert(mode="L")
 	return image
 
@@ -32,15 +32,17 @@ if __name__ == '__main__':
 		List.append(f)
 	if filename in List:
 		image = Image.open(filename) #.convert('RGB').save('new.jpg') 
-		#Resize the image
-		resize(image)
-		#Black&White
-		image=black_white(image)
+		alter(image)
+		image=pigment(image)
 		pixels_to_chars = pixel_to_ascii(image)
 		len_pixels_to_chars = len(pixels_to_chars)
 		image_ascii = [pixels_to_chars[index: index + 100] for index in xrange(0, len_pixels_to_chars, 100)]
 		final_ascii_image = "\n".join(image_ascii)
 		print final_ascii_image
+		file_name , file_extention = os.path.splitext(filename)
+		file_object = open('{}.txt'.format(file_name) , "w+")
+		file_object.write(final_ascii_image)
+		file_object.close()
 	else:
 		print (" File not found :( ")
 
