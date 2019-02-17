@@ -1,6 +1,6 @@
 from PIL import Image
 import os
-
+import urllib
 
 character_box = ['.',',',':',';','+','*','?','%','S','#','@']
 
@@ -27,6 +27,9 @@ def pixel_to_ascii(image):
 
 if __name__ == '__main__':
 	filename=raw_input() #input image name
+	if filename.startswith("http://") or filename.startswith("https://"):
+		urllib.urlretrieve(filename, "img_new.jpg")
+		filename="img_new.jpg"
 	List=[]
 	for f in os.listdir('.'):
 		List.append(f)
