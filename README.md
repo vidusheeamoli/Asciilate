@@ -2,7 +2,7 @@
 
 ![](https://github.com/vidusheeamoli/Asciilate/blob/master/Images/render1550364519640.gif)
 
-Asciilate is a python script that takes in an image as the input and returns a text output that replicates the given image with ASCII characters. 
+Asciilate is a python script that takes in an image as the input or the URL of the image that you have to download and Asciilate, and returns a text output that replicates the given image with ASCII characters. 
 
 The output is printed on the terminal and also saved as a text file in the same directory. The name of the new text file is the same as the name of the image.
 
