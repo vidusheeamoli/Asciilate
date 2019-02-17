@@ -8,7 +8,7 @@ The output is printed on the terminal and also saved as a text file in the same 
 
 For eg: If the following picture is given as the input
 
-![]()
+![](https://github.com/vidusheeamoli/Asciilate/blob/master/Images/img2.jpg)
 
 the output is
 
